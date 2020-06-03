@@ -2,11 +2,7 @@
 using BaiTapLon.Models.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 
 namespace BaiTapLon.Controllers
 {
@@ -43,36 +39,38 @@ namespace BaiTapLon.Controllers
             ViewBag.SanPham = new BaiTapLon.Models.DAOO.SanPhamDAO().thongTinSanPham(Name);
             return View("~/Views/BaiTapLon/details.cshtml");
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Login()
         {
             return View("~/Views/BaiTapLon/login.cshtml");
         }
 
         [System.Web.Mvc.HttpPost]
-        public ActionResult Login(string email,string password)
+        public JsonResult Login(string email,string password)
         {
             if (new BaiTapLon.Models.DAOO.LoginDAO().checkUser(email, password) == "Success")
             {
-                ViewBag.SanPham = new SanPhamDAO().getAll();
-                return Content("Success");
+                return Json("Success", JsonRequestBehavior.AllowGet);
             }
             else
-                return Content("Erorr");
+                return Json("Erorr", JsonRequestBehavior.AllowGet);
         }
+
         [System.Web.Mvc.HttpPost]
-        public ActionResult creatUser(String FirstName,String LastName,String Email,bool Sex,String Password)
+        public JsonResult creatUser(string FirstName,string LastName,String Email,bool Sex,String Password)
         {
-            creatUser user = new creatUser();
+            Login user = new Login();
             user.FirstName = FirstName;
             user.LastName = LastName;
             user.Email = Email;
             user.Sex = true;
             user.Password = Password;
             if (new BaiTapLon.Models.DAOO.LoginDAO().createUser(user) == "Success")
-                return Content("Succress");
+                return Json("Success", JsonRequestBehavior.AllowGet);
             else
-                return Content("Erorr");
+                return Json("Erorr", JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult AddSanPham(String Image, int Price, String Name, String ShoeFirm)
         {
             TungSanPham tungSanPham = new TungSanPham();
@@ -95,18 +93,6 @@ namespace BaiTapLon.Controllers
             return Content("Success");
         }
 
-
-
-        //public JsonResult AddSanPham(TungSanPham tungSanPham)
-        //{
-        //    if (tungSanPham != null)
-        //    {
-        //        listTungSanPham.Add(tungSanPham);
-        //        return Json(tungSanPham.Name, JsonRequestBehavior.AllowGet);
-        //    }
-        //    else
-        //        return Json("Success", JsonRequestBehavior.AllowGet);
-        //}
         public ActionResult Register()
         {
             return View("~/Views/BaiTapLon/register.cshtml");

@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
@@ -35,71 +35,71 @@
             <div class="registration">
                 <div class="registration_left">
                     <h2>new user? <span> create an account </span></h2>
-                <script>
-                    $(document).ready(function () {
-                        $("#register-submit").click(function () {
-                            $.ajax({
-                                url: "/creatuser",
-                                type: "POST",
-                                data: { FirstName: $("#firstName").val(), LastName: $("#lastName").val(), Email: $("#email").val(), Sex: true, Password: $("#password").val() },
-                                success: function (data) {
-                                    if (data == "Succress") {
-                                        alert("Đăng Ký Thành Công");
-                                    }
-                                    else
-                                        alert("Đăng Ký Không Thành Công");
-                                }
-                            });
-                        });
-                    });                   
-                </script>
-
-                <div class="registration_form">
-                    <!-- Form -->
-                    <form id="registration_form">
-                        <div>
-                            <label>
-                                <input placeholder="first name:" type="text" tabindex="1" required autofocus id="firstName">
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input placeholder="last name:" type="text" tabindex="2" required autofocus id="lastName">
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input placeholder="email address:" type="email" tabindex="3" required id="email">
-                            </label>
-                        </div>
-                        <div class="sky-form">
-                            <div class="sky_form1">
-                                <ul>
-                                    <li><label class="radio left"><input type="radio" name="radio" checked=""><i></i>Male</label></li>
-                                    <li><label class="radio"><input type="radio" name="radio"><i></i>Female</label></li>
-                                    <div class="clearfix"></div>
-                                </ul>
+                    <div class="registration_form">
+                        <!-- Form -->
+                        <form id="registration_form">
+                            <div>
+                                <label>
+                                    <input placeholder="first name:" type="text" id="firstName">
+                                </label>
                             </div>
-                        </div>
-                        <div>
-                            <label>
-                                <input id="password" placeholder="password" type="password" tabindex="4" required>
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input placeholder="retype password" type="password" tabindex="4" required>
-                            </label>
-                        </div>
-                        <div>
-                            <input type="button" value="create an account" id="register-submit">
-                        </div>
-                        <div class="sky-form">
-                            <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" href="#"> terms of service</a> </label>
-                        </div>
-                    </form>
-                    <!-- /Form -->
-                </div>
+                            <div>
+                                <label>
+                                    <input placeholder="last name:" type="text" id="lastName">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input placeholder="email address:" type="email" id="email11">
+                                </label>
+                            </div>
+                            <div class="sky-form">
+                                <div class="sky_form1">
+                                    <ul>
+                                        <li><label class="radio left"><input type="radio" name="radio" checked=""><i></i>Male</label></li>
+                                        <li><label class="radio"><input type="radio" name="radio"><i></i>Female</label></li>
+                                        <div class="clearfix"></div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <label>
+                                    <input id="password11" placeholder="password" type="text" >
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input placeholder="retype password" type="password" tabindex="4" required>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="button" value="create an account" id="register-submit">
+                            </div>
+                            <div class="sky-form">
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" href="#"> terms of service</a> </label>
+                            </div>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#register-submit").click(function () {
+                                        $.ajax({
+                                            url: "/creatuser",
+                                            type: "POST",
+                                            data: { FirstName: $("#firstName").val(), LastName: $("#lastName").val(), Email: $("#email11").val(), Sex: true, Password: $("#password11").val() },
+                                            success: function (data) {
+                                                alert(data);
+                                                if (data == "Success")
+                                                    alert("Thêm Thành Công");
+                                                else
+                                                    alert("Thêm Không Thành Công");
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+                        </form>
+                        <!-- /Form -->
+                    </div>
                 </div>
                 <div class="registration_left">
                     <h2>existing user</h2>

@@ -24,12 +24,12 @@ namespace BaiTapLon.Controllers
             else
                 return Content("Erorr");
         }
-        public ActionResult creatUser(creatUser user)
-        {
-            if (new BaiTapLon.Models.DAOO.LoginDAO().createUser(user) == "Success")
-                return Content("Succress");
-            else
-                return Content("Erorr");
-        }
+        //public ActionResult creatUser(creatUser user)
+        //{
+        //    if (new BaiTapLon.Models.DAOO.LoginDAO().createUser(user) == "Success")
+        //        return Content("Succress");
+        //    else
+        //        return Content("Erorr");
+        //}
     }
 }

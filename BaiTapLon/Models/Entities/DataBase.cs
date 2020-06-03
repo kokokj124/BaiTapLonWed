@@ -1,15 +1,14 @@
-﻿namespace BaiTapLon.Models.Entities
+namespace BaiTapLon.Models.Entities
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using BaiTapLon.Models.Entity;
 
     public partial class DataBase : DbContext
     {
         public DataBase()
-            : base("name=BaiTapLon")
+            : base("name=DataBase2")
         {
         }
 
@@ -21,10 +20,6 @@
             modelBuilder.Entity<SanPham>()
                 .Property(e => e.Size)
                 .IsFixedLength();
-
-            modelBuilder.Entity<Login>()
-            .Property(e => e.Email)
-            .IsFixedLength();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace BaiTapLon.Models.Entity
+namespace BaiTapLon.Models.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -23,6 +23,5 @@
 
         [StringLength(50)]
         public string Password { get; set; }
-        public object Size { get; internal set; }
     }
 }
