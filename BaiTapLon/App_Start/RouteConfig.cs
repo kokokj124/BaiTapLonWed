@@ -46,6 +46,24 @@ namespace BaiTapLon
             );
 
             routes.MapRoute(
+            name: "CreatUser",
+            url: "creatuser/{id}",
+            defaults: new { controller = "BaiTapLon", action = "creatUser", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+            name: "AddSanPham",
+            url: "addsanpham/{id}",
+            defaults: new { controller = "BaiTapLon", action = "AddSanPham", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+            name: "DeleteSanPham",
+            url: "deletesanpham/{id}",
+            defaults: new { controller = "BaiTapLon", action = "DeleteSanPham", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
             name: "Register",
             url: "register/{id}",
             defaults: new { controller = "BaiTapLon", action = "Register", id = UrlParameter.Optional }
